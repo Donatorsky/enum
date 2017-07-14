@@ -1,13 +1,8 @@
-# enum
-Enumeration library for a PHP 7.1+
+<?php
 
-An enum type is useful when there is need to allow only one of limited set of values to be accepted. It also helps logically group them in one place.
-
-Its interface is mostly based on [java.lang.Enum](https://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html), but implementation adds some more magic to it.
-
-A basic usage:
-```php
 namespace My\App;
+
+require_once '../vendor/autoload.php';
 
 
 /**
@@ -127,101 +122,5 @@ echo 'Please, choose one of following days: ' . implode(', ', Day::keys()) . PHP
 // Ok, last question
 // Note: valueOf() returns object of Day class
 echo 'What is the value of WEDNESDAY? ' . Day::valueOf(Day::class, 'WEDNESDAY')->getValue();
-```
 
-Main difference with other implementations is that it is allowed for constants to have complex value:
-```php
-namespace Donatorsky\Enum\Tests;
-
-use Donatorsky\Enum\Enum;
-
-
-/**
- * Class Rectangle
- *
- * @method static Rectangle SMALL()
- * @method static Rectangle MEDIUM()
- * @method static Rectangle LARGE()
- *
- * @package Donatorsky\Enum\Tests
- */
-class Rectangle extends Enum
-{
-
-    public const SMALL  = [ 2,  3, 'RED'];
-    public const MEDIUM = [ 5,  8, 'GREEN'];
-    public const LARGE  = [13, 21, 'BLUE'];
-
-    /**
-     * @var float
-     */
-    protected $width;
-
-    /**
-     * @var float
-     */
-    protected $height;
-
-    /**
-     * @var float
-     */
-    protected $area;
-
-    /**
-     * @var Color
-     */
-    protected $color;
-
-
-    /**
-     * Rectangle constructor.
-     *
-     * @param float  $width
-     * @param float  $height
-     * @param string $color
-     */
-    protected function __construct(float $width, float $height, string $color)
-    {
-        $this->width = $width;
-        $this->height = $height;
-        $this->area = $width * $height;
-        $this->color = Color::$color();
-    }
-
-
-    /**
-     * @return float
-     */
-    public function getWidth(): float
-    {
-        return $this->width;
-    }
-
-
-    /**
-     * @return float
-     */
-    public function getHeight(): float
-    {
-        return $this->height;
-    }
-
-
-    /**
-     * @return Color
-     */
-    public function getColor(): Color
-    {
-        return $this->color;
-    }
-
-
-    /**
-     * @return float
-     */
-    public function getArea(): float
-    {
-        return $this->area;
-    }
-}
-```
+var_dump(Day::all());
