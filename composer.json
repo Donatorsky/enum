@@ -1,8 +1,8 @@
 {
-  "name": "Donatorsky/enum",
+  "name": "donatorsky/enum",
   "description": "Enumeration library for a PHP 7.1+",
   "keywords": ["enum"],
-  "homepage": "https://github.com/Donatorsky/enum",
+  "homepage": "https://github.com/donatorsky/enum",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0"

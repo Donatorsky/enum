@@ -11,8 +11,9 @@ use ReflectionClass;
  *
  * PHP's Enum implementation.
  *
- * @author Maciej Kudas <maciejkudas@gmail.com>
- * @link   https://github.com/Donatorsky/enum
+ * @author  Maciej Kudas <maciejkudas@gmail.com>
+ * @link    https://github.com/donatorsky/enum
+ * @version 1.0.0
  */
 abstract class Enum implements Enumerable
 {
